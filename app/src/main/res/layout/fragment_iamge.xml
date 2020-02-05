@@ -1,12 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout">
 
+    <data>
 
-    <LinearLayout
+        <variable
+            name="eventListener"
+            type="com.liwenpeng.textimage.view.main.module.image.ImageFragment.EventListener" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#ffdfff">
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/tab_image_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view)->eventListener.clickImage(view)}"
+            android:text="从相册中选取图片"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <EditText
+            android:id="@+id/tab_image_edit_text"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </layout>

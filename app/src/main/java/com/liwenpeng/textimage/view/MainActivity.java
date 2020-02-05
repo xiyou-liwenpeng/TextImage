@@ -3,7 +3,6 @@ package com.liwenpeng.textimage.view;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import com.liwenpeng.textimage.R;
 import com.liwenpeng.textimage.databinding.ActivityMainBinding;
 import com.liwenpeng.textimage.view.main.adapter.MainAdapter;

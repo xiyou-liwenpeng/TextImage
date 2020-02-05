@@ -28,9 +28,9 @@ public class MainAdapter extends FragmentPagerAdapter {
         mImageFragment = new ImageFragment();
         mMainFragment = new MainFragment();
         mMeFragment = new MeFragment();
+        mFragment.add(mMainFragment);
         mFragment.add(mImageFragment);
         mFragment.add(mMeFragment);
-        mFragment.add(mMainFragment);
     }
 
     @Override
