@@ -1,5 +1,6 @@
 package com.liwenpeng.textimage.view.main.module.image;
 
+import android.content.pm.PackageManager;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;

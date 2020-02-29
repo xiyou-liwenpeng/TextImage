@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="@dimen/edit_note_toolbar_btn_size"
+        android:layout_height="@dimen/edit_note_toolbar_btn_size"
+        android:src="@mipmap/ic_note_edit_back"
+        android:scaleType="fitCenter"
+        android:clickable="true"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/tick_btn"
+        android:layout_width="@dimen/edit_note_toolbar_btn_size"
+        android:layout_height="@dimen/edit_note_toolbar_btn_size"
+        android:layout_marginLeft="10dp"
+        android:src="@mipmap/ic_note_edit_tick"
+        android:scaleType="fitCenter"
+        android:clickable="true"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/retroke_btn"
+        android:layout_width="@dimen/edit_note_toolbar_btn_size"
+        android:layout_height="@dimen/edit_note_toolbar_btn_size"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/editor_bar_redo_select"
+        android:scaleType="fitCenter"
+        android:clickable="true"
+        android:enabled="false"
+        app:layout_constraintRight_toLeftOf="@+id/recover_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/recover_btn"
+        android:layout_width="@dimen/edit_note_toolbar_btn_size"
+        android:layout_height="@dimen/edit_note_toolbar_btn_size"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/editor_bar_undo_select"
+        android:scaleType="fitCenter"
+        android:clickable="true"
+        android:enabled="false"
+        app:layout_constraintRight_toLeftOf="@id/format_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/format_btn"
+        android:layout_width="@dimen/edit_note_toolbar_btn_size"
+        android:layout_height="@dimen/edit_note_toolbar_btn_size"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/editor_bar_format_select"
+        android:scaleType="fitCenter"
+        android:clickable="true"
+        app:layout_constraintRight_toLeftOf="@id/attach_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/attach_btn"
+        android:layout_width="@dimen/edit_note_toolbar_btn_size"
+        android:layout_height="@dimen/edit_note_toolbar_btn_size"
+        android:layout_marginRight="20dp"
+        android:src="@mipmap/ic_note_edit_attach"
+        android:scaleType="fitCenter"
+        android:clickable="true"
+        app:layout_constraintRight_toLeftOf="@id/more_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/more_btn"
+        android:layout_width="@dimen/edit_note_toolbar_btn_size"
+        android:layout_height="@dimen/edit_note_toolbar_btn_size"
+        android:src="@mipmap/ic_note_edit_more"
+        android:scaleType="fitCenter"
+        android:clickable="true"
+        android:layout_marginRight="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

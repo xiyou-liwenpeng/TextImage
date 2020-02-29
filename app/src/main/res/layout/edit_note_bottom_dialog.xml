@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:background="@drawable/editor_note_bottom_dialog_bg">
+
+    <TextView
+        android:id="@+id/dialog_album"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="来自相册"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:textColor="@color/black_color"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DEDEDE"/>
+
+    <TextView
+        android:id="@+id/dialog_network"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="图片链接"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:textColor="@color/black_color"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DEDEDE"/>
+
+    <TextView
+        android:id="@+id/dialog_random"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="随机图片链接"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:textColor="@color/black_color"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DEDEDE"/>
+
+    <TextView
+        android:id="@+id/dialog_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="取消"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:textColor="@color/black_color"/>
+
+</LinearLayout>

@@ -8,6 +8,7 @@ import com.baidu.ocr.sdk.OCR;
 import com.baidu.ocr.sdk.OnResultListener;
 import com.baidu.ocr.sdk.exception.OCRError;
 import com.baidu.ocr.sdk.model.AccessToken;
+import com.jscheng.srich.route.Router;
 
 public class BaseApplication extends Application {
 
@@ -17,6 +18,8 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        Router.init(this);
         new Handler().post(new Runnable() {
             @Override
             public void run() {

@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:name=".base.BaseApplication"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
         <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +25,17 @@
         </activity>
         <activity android:name=".view.main.module.image.activity.GetImageActivity"
             android:theme="@style/Transparent"/>
+
+        <activity android:name="com.jscheng.srich.note_edit.EditNoteActivity"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+
+        <activity android:name="com.jscheng.srich.outline.OutLinesActivity">
+        </activity>
+
+        <activity android:name="com.jscheng.srich.image_preview.ImagePreviewActivity">
+        </activity>
+
     </application>
 
 </manifest>

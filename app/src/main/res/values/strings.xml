@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">TextImage</string>
+    <string name="app_name">IWords</string>
     <string name="tab_main_string">首页</string>
     <string name="tab_me_string">我的</string>
-    <string name="tab_image_string">图文</string>
+    <string name="tab_image_string">功能</string>
+
+    <string name="note_outline_title">所有笔记</string>
+    <string name="note_outline_delete">删除</string>
 </resources>

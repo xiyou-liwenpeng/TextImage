@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_layout"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/outline_item_margin_horizon"
+    android:paddingRight="@dimen/outline_item_margin_horizon"
+    android:background="@color/outline_background">
+
+    <ImageView
+        android:id="@+id/summary_image_view"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/outline_item_margin_vertical"
+        android:layout_marginBottom="@dimen/outline_item_margin_vertical"/>
+
+    <LinearLayout
+        android:layout_toLeftOf="@id/summary_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/outline_item_margin_vertical"
+        android:layout_marginBottom="@dimen/outline_item_margin_vertical">
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/outline_item_date_text_size"
+            android:textColor="@color/outline_item_date_text_color"
+            android:text="@string/tab_me_string"/>
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/outline_item_margin_vertical"
+            android:textSize="@dimen/outline_item_title_size"
+            android:textColor="@color/outline_item_title_text_color"
+            android:textStyle="bold"
+            android:text="@string/tab_me_string"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:lineSpacingExtra="@dimen/outline_line_spacing"/>
+
+        <TextView
+            android:id="@+id/summary_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/outline_item_margin_vertical"
+            android:textSize="@dimen/outline_item_title_size"
+            android:textColor="@color/outline_item_summary_text_color"
+            android:text="@string/tab_me_string"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:lineSpacingExtra="@dimen/outline_line_spacing"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/cut_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/outline_toolbar_line"/>
+
+</RelativeLayout>
