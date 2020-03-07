@@ -22,6 +22,19 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#DEDEDE"/>
+    <TextView
+        android:id="@+id/dialog_wenzi"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="文字识别"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:textColor="@color/black_color"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DEDEDE"/>
 
     <TextView
         android:id="@+id/dialog_network"

@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import com.hjq.bar.OnTitleBarListener;
 import com.jscheng.srich.model.Note;
 import com.jscheng.srich.model.NoteModel;
+import com.jscheng.srich.outline.OutLineCenterDialog;
 import com.jscheng.srich.outline.OutLinesAdapter;
 import com.jscheng.srich.route.Router;
 import com.liwenpeng.textimage.R;
@@ -46,7 +47,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
-public class MainFragment extends Fragment implements OnBannerListener {
+public class MainFragment extends Fragment implements OnBannerListener , IShowLongView, INotify{
 
     private FragmentMainBinding mFragmentMainBinding;
     private SearchFragment mSearchFragment;
@@ -57,6 +58,7 @@ public class MainFragment extends Fragment implements OnBannerListener {
     private LinearLayoutManager mLayoutManager;
     private OutLinesAdapter mRecyclerAdapter ;
     private List<Note> mNodes = new ArrayList<>();
+    private OutLineCenterDialog mCenterDialog;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -82,7 +84,7 @@ public class MainFragment extends Fragment implements OnBannerListener {
         this.mRecyclerView = mFragmentMainBinding.outlineRecyclerview;
         this.mLayoutManager = new LinearLayoutManager(getContext(),
                 LinearLayoutManager.VERTICAL, false);
-        this.mRecyclerAdapter = new OutLinesAdapter(getContext(), mRecyclerView, mLayoutManager);
+        this.mRecyclerAdapter = new OutLinesAdapter(getContext(), mRecyclerView, mLayoutManager, this);
         this.mRecyclerView.setLayoutManager(mLayoutManager);
         this.mRecyclerView.setAdapter(mRecyclerAdapter);
         this.mRecyclerView.addOnScrollListener(new ScrollChangeListener());
@@ -97,7 +99,6 @@ public class MainFragment extends Fragment implements OnBannerListener {
         super.onResume();
         reload();
     }
-
 
     public void reload() {
         Observable.create(new ObservableOnSubscribe<List<Note>>() {
@@ -115,6 +116,19 @@ public class MainFragment extends Fragment implements OnBannerListener {
                         mRecyclerAdapter.setData(notes);
                     }
                 });
+    }
+
+    @Override
+    public void showCenterDialog(String id) {
+        if (mCenterDialog == null) {
+            mCenterDialog = new OutLineCenterDialog(getContext(), null, this);
+        }
+        mCenterDialog.show(id);
+    }
+
+    @Override
+    public void upDate() {
+        reload();
     }
 
     private class ScrollChangeListener extends RecyclerView.OnScrollListener {

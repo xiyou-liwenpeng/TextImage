@@ -6,4 +6,6 @@
 
     <string name="note_outline_title">所有笔记</string>
     <string name="note_outline_delete">删除</string>
+
+    <string name="tab_me_string_name">个人信息</string>
 </resources>

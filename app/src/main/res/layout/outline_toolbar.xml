@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/outline_toolbar_small_height"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/outline_toolbar_background">
+    android:background="#1296db">
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"

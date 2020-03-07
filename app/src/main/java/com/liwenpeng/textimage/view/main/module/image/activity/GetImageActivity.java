@@ -23,6 +23,7 @@ import com.baidu.ocr.sdk.OnResultListener;
 import com.baidu.ocr.sdk.exception.OCRError;
 import com.baidu.ocr.sdk.model.GeneralBasicParams;
 import com.baidu.ocr.sdk.model.GeneralResult;
+import com.jscheng.srich.utils.UriPathUtil;
 import com.liwenpeng.textimage.R;
 import com.liwenpeng.textimage.utils.PhoneImageUtil;
 
@@ -32,19 +33,23 @@ import org.json.JSONObject;
 
 import java.io.File;
 
+
 public class GetImageActivity extends Activity {
 
     private static IGetImageTxt mIGetImageTxt;
+    private static boolean mIsWprd;
 
     public interface IGetImageTxt {
         void setImageTxt(String txt);
+        void getImageInfor(String s);
     }
 
-    public static void startGetImageActivity(Context context, IGetImageTxt iGetImageTxt) {
+    public static void startGetImageActivity(Context context, IGetImageTxt iGetImageTxt, boolean isWord) {
         if (context == null) {
             return;
         }
         mIGetImageTxt = iGetImageTxt;
+        mIsWprd = isWord;
         Intent intent = new Intent();
         intent.setClass(context, GetImageActivity.class);
         context.startActivity(intent);
@@ -91,6 +96,13 @@ public class GetImageActivity extends Activity {
                     }
                 }
                 break;
+        }
+        if (requestCode == 1) {
+            Uri uri = data.getData();
+            String path = UriPathUtil.getAbsulotePath(this, uri);
+            if (mIGetImageTxt != null){
+                mIGetImageTxt.getImageInfor(path);
+            }
         }
     }
 
@@ -151,6 +163,9 @@ public class GetImageActivity extends Activity {
 
     private void getImage(String filePath){
         // 通用文字识别参数设置
+        if (!mIsWprd){
+            return;
+        }
         GeneralBasicParams param = new GeneralBasicParams();
         param.setDetectDirection(true);
         param.setImageFile(new File(filePath));
