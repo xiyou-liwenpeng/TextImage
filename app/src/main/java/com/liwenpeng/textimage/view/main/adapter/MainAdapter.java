@@ -25,11 +25,11 @@ public class MainAdapter extends FragmentPagerAdapter {
     public MainAdapter(MainActivity mainActivity) {
         super(mainActivity.getSupportFragmentManager());
         this.context = mainActivity;
-        mImageFragment = new ImageFragment();
+//        mImageFragment = new ImageFragment();
         mMainFragment = new MainFragment();
         mMeFragment = new MeFragment();
         mFragment.add(mMainFragment);
-        mFragment.add(mImageFragment);
+//        mFragment.add(mImageFragment);
         mFragment.add(mMeFragment);
     }
 

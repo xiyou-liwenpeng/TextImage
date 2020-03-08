@@ -21,14 +21,14 @@ public class MainActivity extends AppCompatActivity {
         mMainAdapter = new MainAdapter(this);
         mActivityMainBinding.mainViewPager.setAdapter(mMainAdapter);
         mActivityMainBinding.mainTabLayout.setupWithViewPager(mActivityMainBinding.mainViewPager);
-        mActivityMainBinding.mainViewPager.setOffscreenPageLimit(3);
+        mActivityMainBinding.mainViewPager.setOffscreenPageLimit(2);
         initTab();
     }
 
     private void initTab(){
         mActivityMainBinding.mainTabLayout.getTabAt(0).setCustomView(R.layout.layout_tab_main);
-        mActivityMainBinding.mainTabLayout.getTabAt(1).setCustomView(R.layout.layout_tab_image);
-        mActivityMainBinding.mainTabLayout.getTabAt(2).setCustomView(R.layout.layout_tab_me);
+//        mActivityMainBinding.mainTabLayout.getTabAt(1).setCustomView(R.layout.layout_tab_image);
+        mActivityMainBinding.mainTabLayout.getTabAt(1).setCustomView(R.layout.layout_tab_me);
         mActivityMainBinding.mainTabLayout.getTabAt(0).getCustomView().setSelected(true);
     }
 

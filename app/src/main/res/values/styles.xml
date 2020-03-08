@@ -77,4 +77,12 @@
         <attr name="lineSize" format="dimension" />
     </declare-styleable>
 
+    <style name="style_read">
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+    </style>
+
+    <style name="style_size">
+        <item name="android:textSize">23sp</item>
+    </style>
+
 </resources>

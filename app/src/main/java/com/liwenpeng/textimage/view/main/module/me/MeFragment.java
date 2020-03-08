@@ -12,11 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.jscheng.srich.note_edit.EditNoteActivity;
-import com.jscheng.srich.note_edit.EditNotePresenter;
 import com.jscheng.srich.outline.OutLinesActivity;
+import com.jscheng.srich.route.Router;
 import com.liwenpeng.textimage.R;
 import com.liwenpeng.textimage.databinding.FragmentMeBinding;
+import com.liwenpeng.textimage.view.main.module.image.activity.GetImageUserActivity;
 
 public class MeFragment extends Fragment {
 
@@ -47,16 +47,16 @@ public class MeFragment extends Fragment {
         meBinding.linearWenzi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), EditNoteActivity.class);
-                intent.putExtra("iword", true);
-                startActivity(intent);
+
+                Router.with(getContext()).route("editnote").go();
             }
         });
 
         meBinding.linearXiangce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toastShow();
+                Intent intent = new Intent(getContext(), GetImageUserActivity.class);
+                startActivity(intent);
             }
         });
 

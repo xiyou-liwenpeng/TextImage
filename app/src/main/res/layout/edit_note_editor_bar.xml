@@ -39,6 +39,16 @@
             android:gravity="center_vertical">
 
             <TextView
+                android:id="@+id/edit_bar_size"
+                style="@style/NoteEditBarItemStyle"
+                android:text="字体" />
+
+            <TextView
+                android:id="@+id/edit_bar_yanse"
+                style="@style/NoteEditBarItemStyle"
+                android:text="颜色" />
+
+            <TextView
                 android:id="@+id/edit_bar_bold"
                 style="@style/NoteEditBarItemStyle"
                 android:text="粗体" />

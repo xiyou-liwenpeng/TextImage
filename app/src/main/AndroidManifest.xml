@@ -32,9 +32,13 @@
 
         <activity android:name="com.jscheng.srich.outline.OutLinesActivity">
         </activity>
+        <activity android:name=".view.main.module.image.activity.GetImageUserActivity">
+        </activity>
 
         <activity android:name="com.jscheng.srich.image_preview.ImagePreviewActivity">
         </activity>
+
+
 
     </application>
 

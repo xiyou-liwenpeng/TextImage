@@ -1,6 +1,7 @@
 package com.liwenpeng.textimage.base;
 
 import android.app.Application;
+import android.content.Context;
 import android.os.Handler;
 import android.util.Log;
 
@@ -15,6 +16,12 @@ public class BaseApplication extends Application {
     private static final String AK = "Di8PLjB0guzAjT9TNrWms7AE";
     private static final String SK = "pAUbLdTR72GDcSVg2sNoR9s0LGs6uVI3";
 
+    private static Context mContext;
+
+    public static Context getAppliction(){
+        return mContext;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -26,6 +33,7 @@ public class BaseApplication extends Application {
                 initBaiDuOcr();
             }
         });
+        mContext = getApplicationContext();
     }
 
     private void initBaiDuOcr(){
