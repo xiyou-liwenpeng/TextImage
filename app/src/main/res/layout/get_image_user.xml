@@ -50,6 +50,7 @@
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:text="导入"
+                    android:visibility="gone"
                     android:id="@+id/daoru"/>
                 <TextView
                     android:layout_width="0dp"
