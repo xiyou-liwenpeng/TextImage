@@ -52,10 +52,6 @@
                     android:text="导入"
                     android:visibility="gone"
                     android:id="@+id/daoru"/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
 
                 <Button
                     android:layout_width="100dp"
