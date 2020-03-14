@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <attr format="color" name="image_gallery_select_shade"/>
+    <attr format="integer" name="image_gallery_span_count"/>
+    <color name="image_color_accent">#4CA1FB</color>
+    <color name="image_color_black">#2B2B2B</color>
+    <color name="image_color_blue">#0078FF</color>
+    <color name="image_color_cyan">#20FFCD</color>
+    <color name="image_color_primary">#FFFFFF</color>
+    <color name="image_color_red">#FF5151</color>
+    <color name="image_color_white">#FFFFFF</color>
+    <color name="image_color_yellow">#FFCC00</color>
+    <dimen name="image_color">28dp</dimen>
+    <dimen name="image_color_margin">6dp</dimen>
+    <dimen name="image_mode_space">32dp</dimen>
+    <string name="image_all_photo">所有照片</string>
+    <string name="image_cancel">取消</string>
+    <string name="image_clip">裁剪</string>
+    <string name="image_done">完成</string>
+    <string name="image_doodle">涂鸦</string>
+    <string name="image_mosaic">马赛克</string>
+    <string name="image_mosaic_tip">请直接在图片上涂抹虚化</string>
+    <string name="image_original">原图</string>
+    <string name="image_preview">预览</string>
+    <string name="image_reset">还原</string>
+    <string name="image_rotate">旋转</string>
+    <string name="image_text">文字</string>
+    <string name="image_undo">撤销</string>
+    <style name="ImageDialogAnimation" parent="android:Animation.Dialog">
+
+        <item name="android:windowEnterAnimation">@anim/image_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/image_dialog_exit</item>
+
+    </style>
+    <style name="ImageEditTheme" parent="android:Theme.Holo">
+
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+    </style>
+    <style name="ImageGalleryTheme" parent="Theme.AppCompat">
+        <item name="image_gallery_span_count">4</item>
+        <item name="image_gallery_select_shade">#90FFFFFF</item>
+    </style>
+    <style name="ImageTextDialog" parent="android:Theme.Holo.Dialog">
+
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="android:windowSoftInputMode">stateAlwaysVisible|adjustResize</item>
+
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.8</item>
+
+        <item name="android:windowAnimationStyle">@style/ImageDialogAnimation</item>
+
+    </style>
+    <declare-styleable name="IMGColorRadio" ns1:ignore="ResourceName">
+
+        <attr format="color" name="image_color"/>
+        <attr format="color" name="image_stroke_color"/>
+
+    </declare-styleable>
+</resources>

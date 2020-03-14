@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="me.kareluo.imaging"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="28" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application>
+        <activity
+            android:name="me.kareluo.imaging.IMGGalleryActivity"
+            android:theme="@style/ImageGalleryTheme" />
+        <activity
+            android:name="me.kareluo.imaging.IMGEditActivity"
+            android:theme="@style/ImageEditTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+    </application>
+
+</manifest>
