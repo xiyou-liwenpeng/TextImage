@@ -59,6 +59,16 @@
                 <Button
                     android:layout_width="100dp"
                     android:layout_height="50dp"
+                    android:text="编辑"
+                    android:id="@+id/bianji"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
                     android:text="相册"
                     android:id="@+id/xiangce"/>
             </LinearLayout>

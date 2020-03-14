@@ -44,7 +44,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-public class GetImageUserActivity extends Activity {
+import me.kareluo.imaging.IMGEditActivity;
+import me.kareluo.imaging.UpdateBitmap;
+
+public class GetImageUserActivity extends Activity implements UpdateBitmap {
     private Button button;
     private ImageView imageView_main;
     private FileInputStream is = null;
@@ -55,6 +58,9 @@ public class GetImageUserActivity extends Activity {
     private Button button_xiangce;
     private Button button_xuanzhuan;
     private Button button_daoru;
+    private Button button_binaji;
+
+    private Intent intentData;
 
 
     @Override
@@ -77,14 +83,28 @@ public class GetImageUserActivity extends Activity {
         button_xiangji = (Button) findViewById(R.id.xiangji);
         button_xuanzhuan = (Button) findViewById(R.id.xuanzhuan);
         button_daoru = (Button) findViewById(R.id.daoru);
+        button_binaji = (Button) findViewById(R.id.bianji);
     }
 
 
     private void onClick() {
+        button_binaji.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (bitmap_guiduhua == null){
+                    showToast();
+                    return;
+                }
+                Intent intent = new Intent(GetImageUserActivity.this, IMGEditActivity.class);
+                IMGEditActivity.setBitmap(bitmap_guiduhua, GetImageUserActivity.this);
+                startActivityForResult(intent, 7);
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (bitmap_guiduhua == null){
+                    showToast();
                     return;
                 }
                 bitmap_guiduhua = huiDuHua(bitmap_guiduhua);
@@ -95,6 +115,7 @@ public class GetImageUserActivity extends Activity {
             @Override
             public void onClick(View v) {
                 if (bitmap_guiduhua == null){
+                    showToast();
                     return;
                 }
                 String path = saveBitmap(getBaseContext(), bitmap_guiduhua);
@@ -108,6 +129,7 @@ public class GetImageUserActivity extends Activity {
             @Override
             public void onClick(View v) {
                 if (bitmap_guiduhua == null){
+                    showToast();
                     return;
                 }
 //                bitmap_guiduhua = toRoundBitmap(bitmap_guiduhua);
@@ -130,6 +152,7 @@ public class GetImageUserActivity extends Activity {
             @Override
             public void onClick(View v) {
                 if (bitmap_guiduhua == null){
+                    showToast();
                     return;
                 }
                 bitmap_guiduhua = rotaingImageView(90, bitmap_guiduhua);
@@ -282,6 +305,7 @@ public class GetImageUserActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        intentData = data;
         Log.e("requestCode---->", ""+requestCode);
         switch (requestCode){
             case 1:
@@ -323,10 +347,20 @@ public class GetImageUserActivity extends Activity {
                         e.printStackTrace();
                     }
                 }
+                break;
+            case 7:
+                if (resultCode == Activity.RESULT_OK) {
+
+                }
+                break;
         }
 
 
     }
+
+    public static Bitmap mBitmap = null;
+
+
     /**
      * api 19以后
      *  4.4版本后 调用系统相机返回的不在是真实的uri 而是经过封装过后的uri，
@@ -416,6 +450,19 @@ public class GetImageUserActivity extends Activity {
         paint.setColorFilter(f);
         c.drawBitmap(bmpOriginal, 0, 0, paint);
         return bmpGrayscale;
+    }
+
+    @Override
+    public void setImage(Bitmap bitmap) {
+        if (bitmap == null){
+            return;
+        }
+        imageView_main.setImageBitmap(bitmap);
+        bitmap_guiduhua = bitmap;
+    }
+
+    private void showToast(){
+        Toast.makeText(this, "请点击相册选图片", Toast.LENGTH_SHORT).show();
     }
 
 }

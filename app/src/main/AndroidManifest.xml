@@ -38,7 +38,14 @@
         <activity android:name="com.jscheng.srich.image_preview.ImagePreviewActivity">
         </activity>
 
+        <activity
+            android:name="me.kareluo.imaging.IMGGalleryActivity"
+            android:theme="@style/ImageGalleryTheme" />
 
+        <activity
+            android:name="me.kareluo.imaging.IMGEditActivity"
+            android:theme="@style/ImageEditTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
 
     </application>
 
